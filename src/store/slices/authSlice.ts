@@ -1,5 +1,5 @@
-import { createSlice, PayloadAction } from '@reduxjs/toolkit';
-import { AuthState, User, LoginResponse } from '../../types/auth';
+import { createSlice, type PayloadAction } from '@reduxjs/toolkit';
+import type { AuthState, User, LoginResponse } from '../../types/auth';
 
 // Get initial state from localStorage
 const getInitialState = (): AuthState => {
@@ -16,6 +16,7 @@ const getInitialState = (): AuthState => {
       isLoading: false,
     };
   } catch (error) {
+    console.log(error);
     // Clear corrupted data
     localStorage.removeItem('token');
     localStorage.removeItem('refreshToken');

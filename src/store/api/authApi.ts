@@ -1,7 +1,8 @@
 import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react';
 import type { BaseQueryFn, FetchArgs, FetchBaseQueryError } from '@reduxjs/toolkit/query';
-import { RootState } from '../store';
+import { type RootState } from '../store';
 import { logout, setCredentials } from '../slices/authSlice';
+import type {LoginRequest, LoginResponse, RegisterRequest, User} from "../../types/auth.ts";
 
 // Custom base query with token refresh logic
 const baseQuery = fetchBaseQuery({
